@@ -88,7 +88,7 @@ int main()
     Employee  *e2 = &tec1;
 
    cout <<"phong tren web";
-    
+    cout <<"day ne hien ra di";
 
 }
 //git remote add origin https://github.com/PhongVietCode/CodeHe.git
