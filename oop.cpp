@@ -87,7 +87,7 @@ int main()
     Employee  *e1 = &dev1;
     Employee  *e2 = &tec1;
 
-    cout <<"1234567";
+    cout <<"oiuqoue";
     
     
 
