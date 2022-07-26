@@ -7,6 +7,9 @@
     GIT COMMIT
     GIT PULL 
     GIT PUSH
+ 2. SAVE CHANGE TU GITHUB VE MAY
+  GIT PULL
+  
 */
     /* array
      static array: contain n elements, range from 0 to n -1, indexable
