@@ -1,6 +1,13 @@
 #include <iostream>
 #include <string.h>
  using namespace std;
+ /*HUONG DAN SU DUNG GITHUB CUA TUI
+ 1. SAVE CHANGE TU MAY LEN GIT HUB
+    GIT ADD
+    GIT COMMIT
+    GIT PULL 
+    GIT PUSH
+*/
     /* array
      static array: contain n elements, range from 0 to n -1, indexable
      dynamic array: how to implement this
