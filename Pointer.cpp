@@ -60,6 +60,23 @@ void deleteTail(Node*head){
     }
     tail->next = NULL;
 }
+void deleteIndex(Node*& head, int index){
+    Node* node = head;
+    int count = 1;
+    if (index == 1){
+        deletehead(head);
+        return;
+    }
+    while(node){
+        if (count == index - 1){
+            node->next = node->next->next;
+            return;
+        }
+        node = node->next;
+        count++;
+    }
+    cout <<"try another index" <<endl;
+}
 void insertIndex(Node* head, int index, int data){
     Node*node = new Node(data);
     Node*temp = head;
@@ -142,16 +159,16 @@ int main()
     verticles.push_back({1,2,3});
     verticles.push_back({4,5,6});
     Funcvec(verticles);
-
-    for(int i= 0; i < verticles.size();i++){
-        cout << verticles[i]<<endl; 
-    }
+    //NORMAL PRINT: vector
+    // for(int i= 0; i < verticles.size();i++){
+    //     cout << verticles[i]<<endl; 
+    // }
     /*ANOTHER WAY:
     if there is not &, v will copy the value of verticle
      to avoid that, we will add & and const to copy reference*/
-    for(const Vertex& v :verticles){
-        cout << v<<endl; 
-    }
+    // for(const Vertex& v :verticles){
+    //     cout << v<<endl; 
+    // }
 
     verticles.erase(verticles.begin() +1);
     /*This instruction need an iterator: 
@@ -160,6 +177,14 @@ int main()
     container. it has five type: input, output, forward, bidirectional, random-access 
     In vector, we use begin() and end() as iterator
     Syntax: "vector<type>:: iterator vari_name" */
+    Node *head =NULL;
+    addhead(head, 1);
+    addTail(head, 2);
+    addTail(head,3);
+    addTail(head,4);
+    addTail(head,5);
+    deleteIndex(head,2);
+    print(head);
 
     return 0;  
 }
