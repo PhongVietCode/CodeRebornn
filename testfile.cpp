@@ -109,12 +109,26 @@
         but O(n) for search
     Problems: Bracket
         [{}] -> valid 
-        ({}) -> valid
-         
-
-
-
+        ({}) -> valid    
+        {([]) -> invalid
 */  
+/* QUEUE FIFO: first in first out
+    Has front and rear, add/offering means enqueue, remove/polling means dequeue 
+    INSTRUCTIONS:
+        enqueue: O(1)
+        dequeue: O(1)
+        peeking: looking for a value at the front O(1)
+        conttains: check the element is contained in the queue O(n)  
+        removal: remove the elements in the worst case O(n)
+        is empty: check is empty O(1)
+    USED:
+        An waiting line models a queue
+        keep track of the most recently added elements
+        web sever 
+        breadth first searhch graph traversal
+    IMPLEMENTATION BFS:
+        
+*/
 int main(){
     Node *head = NULL;
     inserthead(head,10);
