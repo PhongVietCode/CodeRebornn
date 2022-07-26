@@ -113,6 +113,7 @@ int main(){
     int num;
     cin>>num;
     cout <<"phong";
+    cout << "thay doi lan 1";
     system("pause");
     return 0;
 }
