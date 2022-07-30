@@ -55,7 +55,7 @@ void print(){
     }
 }
 #pragma endregion
-#pragma region //LINKED LIST IMPLEMENTATION -->unlimited size
+#pragma region //LINKED LIST IMPLEMENTATION --> unlimited size
 /*We will use the head of the linked list as 
 the top of the stack*/
 struct Node{
@@ -111,6 +111,7 @@ void printnode(){
     IMPLEMENTATION BFS:
 
 */
+
 int main(){
     
     free(head);
