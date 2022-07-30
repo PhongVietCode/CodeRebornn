@@ -25,7 +25,7 @@ using namespace std;
 */
 
 #pragma region // ARRAY IMPLEMENTATION --> has limited size#
-
+// set the end of the array is the top
 #define SIZE 5
 int a[SIZE];
 int top = -1;
@@ -195,7 +195,7 @@ void BalanParenthese(char *c, int n)
 /*INFIX, PREFIX, POSTFIX
 2+3 --> <operand><operator><operand>
 first we need to find <operand><operand><operator>
-then find next nextf
+then find next next
 if prefix(dau dau)--> go from right to left
 if postfix(dau sau)--> go from letf to right*/
 int operation(char op, int n1, int n2){
@@ -227,13 +227,22 @@ char postfix(char *c)
     }
     return s.top();
 }
+// convert infix to postfix -> a + b --> ab+
+/*look at the top of the stack
+if it is a higher precedent operator we will pop
+it is lower we will push
+we find a close parenthese -> check open parenthese
+just pop the operator not a parenthese*/
+//IMPLEMENT INFIX TO POSTFIX
+
 /* QUEUE FIFO: first in first out
-    Has front and rear, add/offering means enqueue, remove/polling means dequeue
+    Has front and rear, add/offering means enqueue at the rear, remove/polling means dequeue at the front
+
     INSTRUCTIONS:
         enqueue: O(1)
         dequeue: O(1)
         peeking: looking for a value at the front O(1)
-        conttains: check the element is contained in the queue O(n)
+        contains: check the element is contained in the queue O(n)
         removal: remove the elements in the worst case O(n)
         is empty: check is empty O(1)
     USED:
@@ -244,15 +253,94 @@ char postfix(char *c)
     IMPLEMENTATION BFS:
 
 */
+/*CIRCULAR ARRAY: size of array :N
+current position: i
+next position : (i +1) % N
+prev pos: (i + N-1) % N
+*/ 
+//IMPLEMENT QUEUE BY ARRAY:
+#pragma region 
+int front = -1; 
+int rear = -1;
+int queue[10];
 
-/*Infix, prefix, postfix
-2+3 --> <operand><operator><operand>
-first we need to find <operand><operand><operator>
-then find next nextf */
+bool isemptyqueue(){
+    if (front == -1 || rear == -1)
+        return true;
+    return false;
+}
+bool isfull(){
+    if (rear == sizeof(queue))
+        return true;
+    return false;
+}
+void enqueue(int data){
+    if (isfull()){
+        cout << "Can not enqueue bc queue is full";
+        return;
+    }
+    if (isemptyqueue())
+        front = 0;
+    rear = (rear + 1) % sizeof(queue);
+    queue[rear] = data;
+}
+void dequeue(){
+    front = (front + 1) % sizeof(queue);
+}
+void printqueue(){
+    for(int i = front; i <= rear; i++){
+        cout << queue[i]<<" ";
+    }
+    cout << endl;
+}
+#pragma endregion
 
+//IMPLEMENE QUEUE BY LINKED LIST
+#pragma region 
+struct Qnode{
+    int data;
+    Qnode *qnext;
+    Qnode(int x){
+        this->data = x;
+        qnext = NULL;
+    }
+};
+Qnode * qfront = NULL;
+Qnode* qrear =  NULL;
+void n_enqueue(int data){
+    Qnode*node = new Qnode(data);
+    if (qfront == NULL){
+        qfront = node;
+        qrear  = node;
+    }
+    else{
+        qrear->qnext = node;
+        qrear =node;
+    }
+}
+void n_dequeue(){
+    Qnode *o = qfront;
+    qfront = qfront->qnext;
+    free(o);
+}
+void n_print(){
+    Qnode* temp = qfront;
+    while(temp){
+        cout << temp->data<<" ";
+        temp = temp->qnext;
+    }
+}
+#pragma endregion
 int main()
 {
-    char c[50] = "23+65-+9*";
-    cout <<postfix(c) -'0';
+    n_enqueue(1);
+    n_enqueue(2);
+    n_enqueue(3);
+    n_enqueue(4);
+    n_enqueue(5);
+    n_enqueue(6);
+    n_dequeue();
+    n_print();
+    
     return 0;
 }
