@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include<stack> // stack from standard template library
 using namespace std;
 /*HUONG DAN SU DUNG GITHUB CUA TUI
 1. SAVE CHANGE TU MAY LEN GIT HUB
@@ -139,16 +140,36 @@ void Reverse(Node *&head)
     head = prev;
     return;
 }
+void ReverseO1(char*c, int n){
+    int j = n-1;
+    for (int i =0;i < n/2;i++){
+        if (i<j){
+            char temp = c[i];
+            c[i] = c[j];
+            c[j] = temp;
+        }
+        j--;
+    }
+}
+// Reverse use linked list:
+/*creat stack<node*>
+push
+top them and set as head
+pop()v */
 
 int main()
 {
-    Node *head = NULL;
-    inserthead(head, 10);
-    inserthead(head, 11);
-    inserthead(head, 12);
-    inserthead(head, 13);
-    inserthead(head, 14);
-    RecursionReverPrint(head);
+    Node*head= NULL;
+    inserthead(head,1);
+    inserthead(head,2);
+    inserthead(head,3);
+    inserthead(head,4);
+    inserthead(head,5);
+    inserthead(head,6);
+    printxuoi(head);
+    reverseuselinkedlist(head);
+    printxuoi(head);
+
     
     return 0;
 }
