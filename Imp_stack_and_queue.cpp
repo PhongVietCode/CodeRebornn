@@ -205,27 +205,29 @@ int operation(char op, int n1, int n2){
     switch(op){
         case '+':
             return n1 +n2;
-        case '-':  return abs(n1 - n2);
-        case '*': return n1 *n2;
+        case '-':  return n2 - n1;
+        case '*': return n1 * n2;   
         case '/': return n1/n2;
         default : 
             return 0;
     }
 }
-char postfix(char *c)
+int postfix(char *c)
 {
     int num1, num2,num3;
-    stack<char> s;
+    stack<int> s;
     for (int i = 0; i < strlen(c); i++)
     {
+        if (c[i] == ' ')
+            continue;
         if (c[i] >= '0' && c[i] <= '9')
-            s.push(c[i]);
+            s.push(c[i] -'0');
         else{
-            num1 = s.top() - '0';
+            num1 = s.top();
             s.pop();
-            num2 = s.top() - '0';
+            num2 = s.top();
             s.pop();
-            s.push(operation(c[i], num1, num2) + '0');
+            s.push(operation(c[i], num1, num2));
         }
     }
     return s.top();
@@ -236,8 +238,76 @@ if it is a higher precedent operator we will pop
 it is lower we will push
 we find a close parenthese -> check open parenthese
 just pop the operator not a parenthese*/
-//IMPLEMENT INFIX TO POSTFIX
-
+//IMPLEMENT INFIX TO POSTFIX --> 2+3*5 ->235*+; (2+3)*5-(7+9)-> 23+5*79+-
+bool isclosebracket(char a){
+    if (a == '}' || a ==']' || a == ')')
+        return true;
+    return false;
+}
+bool isopenbracket(char a){
+    if (a == '{' || a =='[' || a == '(')
+        return true;
+    return false;
+}
+bool tophigherprece(char a, char b){
+    if (a == '*' || a == '/')
+        return true;
+    return false;
+}
+string infixtopostfix(char *c, int n){ // i will fix in the nearest day
+// need to fix the minus infront of the number
+//khi du 2 doi so roi thi top thang kia ra luôn
+    int minus = 0;
+    int countnum = 0;
+    stack<char> infix;
+    string postfix = " ";
+    for (int i = 0; i < n;i++){
+        if (c[i] == ' ')    
+            continue;
+        // khong phai so
+        if (!(c[i] >= '0' && c[i] <= '9')){
+            // khong phai close bracket
+            if (!isclosebracket(c[i])){
+                if (!infix.empty() && tophigherprece(infix.top(), c[i])){
+                            while (!infix.empty())
+                            {
+                                postfix += infix.top();
+                                infix.pop();
+                            }
+                                infix.push(c[i]);
+                            }
+                else if (countnum == 2){
+                    postfix += infix.top();
+                    infix.pop();
+                    countnum = 0;
+                    infix.push(c[i]);
+                }
+                else 
+                    infix.push(c[i]);
+            }
+            // thay close bracket thi pop het
+            else{
+                while(!isopenbracket(infix.top()))
+                {
+                    postfix += infix.top();
+                    infix.pop();
+                }
+                    infix.pop();
+                countnum = 0;
+            }
+        }
+        else{ // chu so thi cho vao day
+            postfix += c[i];
+            countnum++;
+            }
+        }
+        // cuoi cung
+        while(!infix.empty()){
+            postfix += infix.top();
+            infix.pop();
+        }
+    return postfix;
+}
 /* QUEUE FIFO: first in first out
     Has front and rear, add/offering means enqueue at the rear, remove/polling means dequeue at the front
 
@@ -337,14 +407,19 @@ void n_print(){
 
 int main()
 {
-    n_enqueue(1);
-    n_enqueue(2);
-    n_enqueue(3);
-    n_enqueue(4);
-    n_enqueue(5);
-    n_enqueue(6);
-    n_dequeue();
-    n_print();
+    // char s[] = "(2*5) - (2+5)*3 - 7 + 9*(7+9)"; // check :(2*5) - (2+5)*3 - 7 + 9*(7+9)
+    // char s2[strlen(s)];
+    // cout <<"Infix: ";
+    // for(int i = 0;  i < strlen(s); i++){
+    //     if (s[i] != ' '){
+    //         cout << s[i];
+    //     }
+    // }
+    // cout << endl<< "Postfix: "<< infixtopostfix(s, strlen(s))<<endl;
+    // strcpy(s2,infixtopostfix(s, strlen(s)).c_str());
+    // cout <<"The answer is: "<< postfix(s2);
     
+    
+
     return 0;
 }

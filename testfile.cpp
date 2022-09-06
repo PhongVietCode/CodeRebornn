@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include<ctime>
 #include<stack> // stack from standard template library
 using namespace std;
 /*HUONG DAN SU DUNG GITHUB CUA TUI
@@ -159,17 +160,10 @@ pop()v */
 
 int main()
 {
-    Node*head= NULL;
-    inserthead(head,1);
-    inserthead(head,2);
-    inserthead(head,3);
-    inserthead(head,4);
-    inserthead(head,5);
-    inserthead(head,6);
-    printxuoi(head);
-    reverseuselinkedlist(head);
-    printxuoi(head);
-
+    ios_base::sync_with_stdio(0); // doc input nhanh hon
+    cin.tie(0); //doc het input xong in ra 1 lan
+    cout.tie();
     
+
     return 0;
 }

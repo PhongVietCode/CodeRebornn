@@ -1,0 +1,499 @@
+/*Fake class*/
+
+:root {
+    --text-color : blue;  /*variable*/ 
+ }
+  /*
+  hover: chi active khi co  chuot di vao
+  active: chi active khi bam chuot
+  first-child: chon dua con dau tien (danh cho danh sach) ul/ li
+  last-child: chon dua con cuoi cung, giong first child*/
+ .box1:hover {
+     background-color: red;
+ }
+ .box1:active{
+     background-color: yellow;
+ }
+ /*pseudo-element:
+ before: element se luon dung o dau
+ after: element se luon dung o cuoi
+ first letter: lay chu dau
+ first-line : dong dau tien
+ selector: active khi chu do bi boi den
+ */
+ p::selection {
+     color: red;
+     background-color: yellow;
+ }
+ .box::before{
+     content: ""; /*rat quan trong*/
+     display: block; /*can add khi ma obj la 1 cai box*/
+     width: 100px;
+     height: 100px;
+     background-color: brown;
+     content: "hello";
+     justify-content: center;
+     align-items: center;
+     display: flex;
+ }
+ .box::after{
+     content: ""; /*rat quan trong*/
+     display: block; /*can add khi ma obj la 1 cai box*/
+     width: 100px;
+     height: 100px;
+     background-color: blue;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ html {
+     font-size: 100%;
+ }
+ h1 {
+     position: sticky;
+     position:- -webkit-sticky; /*relative:vi tri tuong doi: phu thuoc vao chinh no*/
+     /*top left bottom chi hoat dong khi co thuoc tinh position*/
+     /*sticky: khi keo xuong thi no se dinh vao top cua web*/
+     margin-top: 50px;
+     margin-bottom: 10px;
+     top: 10px;
+     width: 100%;
+     color :var(--text-color);
+     font-weight: 10px;
+     font-size: 2rem; /*rem: cua thang to nhat chua no
+                         em : cua thang gan nhat chua no*/
+     margin-top: 50px;
+     background-color: aliceblue;
+ }
+ 
+ .box {
+     width: 100%;
+     height: 150px;
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     float: left;
+     box-sizing: border-box;
+ }
+ .box-child{
+     position: fixed;/*absolute: get the parent class that has position element
+     lam goc toa do*/
+     top: 19px;
+     right:19px;
+     width: 50px;
+     height: 50px;
+     background-color: yellow;
+ }
+ .box1 {
+     box-sizing: unset;
+     background-image: linear-gradient(rgba(19,20,80,0.5),rgba(100,170,28,0.5),white);
+     padding-bottom: 90px;
+     margin: 10px;
+     border: 10px solid blue;
+     border-radius: 10px;
+ 
+ }
+ .box2 {
+     color: black;
+     background-color: yellow;
+     margin: 10px;
+     border: 10px dashed blue;
+     border-radius: 30px;
+ 
+ }
+ .box3 {
+     background-color: green;
+     padding-top: 10px; /*them pixel vao */
+     /*padding:tren, phai,duoi,trai*/
+     border-width: 5px;
+     border-style:dashed;
+     border-color:gray;
+     /*border: pixed type color*/
+     border-radius: 18px;
+     margin-top: 10px; /*tao space xung quanh hinh*/
+     margin-left: 10px;
+ }
+ .box4{
+     position: fixed;
+     top:0;
+     width: 100%;
+     height: 50px;
+     background-color: black;
+ }
+ .backgroundclip {
+     /*gioi han do mau cua background*/
+     background-clip: content-box;
+     width: 100%;
+     height: 100px;
+     background-color:blueviolet;
+     padding: 20px;
+     box-sizing: border-box;
+     border: 10px dashed blue;
+ }
+ .backgroundimage {
+     width: 100%;
+     height: 100vh;
+     /* background-image: url(https://pngimg.com/uploads/star/star_PNG41493.png),url(https://4.bp.blogspot.com/-PK2lRNnkobw/UEMoBNcOqKI/AAAAAAAAAcA/IVAlVGZp4uI/s1600/Anime%2BWallpapers%2B2012%2B3.jpg);  
+     background-size: 100% auto;
+     background-repeat: no-repeat; */
+     background-image: url(https://th.bing.com/th/id/R.280cf7e2aec07fce8dfcc166eb060b9c?rik=G%2frZdznhg9ErTw&riu=http%3a%2f%2fwonderfulengineering.com%2fwp-content%2fuploads%2f2014%2f07%2funiverse-backgrounds1.jpg&ehk=1PI7TFstOlYz5yJyCTPTGijOssa%2flhxsStAwnF4wWr0%3d&risl=&pid=ImgRaw&r=0);
+     background-size: contain;
+     /*cover: lay chieu doc, cat buc anh, khong chap nhan khoang trang
+     contain: lam sao de buc anh khong bi che khuyet*/
+     background-repeat: no-repeat;
+     /*giu nguyen kich thuoc ban dau cua anh ma khong bi thay doi khi them border hoac padding*/
+     box-sizing: padding-box;
+     background-position: top 20px left 30px; /*mot tham so thi tham so thu 2 la center, top right*/
+     /*tham so dau la trai(-) phai (+), tham so thu 2 la tren duoi*/
+     /*Viet gon
+     background: color url() no-repeat position / contain or cover*/
+     background-origin: content-box;/*di chung voi background image: gioi han do mau cua background*/
+ }
+ /*Lớp giả*/
+ a::after{
+     content: "(" attr(href) ")";
+ }
+ .box1::after {
+     content: "Xin chao cac ban " attr(data-title);
+ }
+ /*Body*/
+ body{
+     background-color:lightgrey;
+ }
+ .nav {
+     min-height: 42px;
+     background-color: orange;
+     display: flex; /*cai nay se lam thang main axis thanh nam ngang*/
+     justify-content: space-between;
+     ;/*vi tri cua noi dung trong block*/
+ }
+ .nav-list {
+     padding-left: 0;
+     margin: auto 16px;
+ }
+ .nav-item {
+     color: white;
+     list-style: none;
+     margin: 0 8px;
+     display: inline-block;
+ }
+ .form-container{
+     max-width: 720px;
+     padding: 32px;
+     margin: 36px auto 0 auto;
+     background-color: aquamarine;
+ }
+ .form__row{
+     padding: 8px 0;
+     display: flex;
+     /*inline-flex: tren cung 1 hang cho cac layout*/
+ }
+ .form__label{
+     min-width: 90px;
+ }
+ .form__input{
+     flex: 1; /*trong flex container neu co 1 item co flex >= 1
+     thi item do se co gang chiem het vi tri cua flex container theo chieu main axis*/
+ }
+ 
+ 
+ /*Collum layout*/
+ 
+ .column-layout {
+     margin-top: 36px;
+     padding: 12px 0;
+     background-color: white;
+     display: flex;
+ }
+ .column-item{
+     padding: 0 16px;
+     flex:1;/*trong so ti le % chiem trong flex container*/
+     /*neu co nhieu item co flex = 1-> tat ca co kich thuoc bang nhau*/
+ }
+ .sidebar-one{
+     flex: 1;
+ 
+ }
+ .sidebar-two{
+     flex: 1;
+ }
+ .main-column{
+     flex: 3;
+ }
+ /*Feature layout*/
+ .feature-layout{
+     margin-top: 36px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;/*khoang cach tat ca cac item deu bang nhau*/ 
+ }
+ /* PC */
+ @media(min-width: 740px){
+     .feature-layout{
+     flex-direction: row;
+     }
+ }
+ .feature-item{
+     padding: 12px 16px;
+     margin-top: 16px;
+     flex-basis: 30% ;/*set kich thuoc theo chieu main axis*/  
+     
+ }
+ .feature-item:nth-child(1){
+     background-color: coral;
+ }
+ .feature-item:nth-child(2){
+     background-color: chocolate;
+ }.feature-item:nth-child(3){
+     background-color:darkorchid;
+ }
+ 
+ .wrap-layout{
+     background-color: white;
+     margin-top: 36px;
+     padding: 12px 0 32px 0;
+     display: flex;
+     justify-content: space-around;
+     flex-wrap: wrap-reverse; /*khi thay doi kich thuoc web thi element se nhay xuong duoi
+     huon item se nhay theo huong cua cross axis(cross end)*/
+ }
+ .wrap-layout__item{
+     width: 148px;
+     height: 90px;
+     color: white;
+     text-align: center;
+     line-height: 90px;
+     font-size: 40px;
+     font-weight: 700;
+     margin-top: 20px;
+     background-color: orange;
+ }
+ 
+ 
+ .center-layout{
+     background-color: blanchedalmond;
+     margin: 36px auto 0 auto;
+     padding:32px 0;
+     max-width: 640px;
+     height: 360px;
+     display: flex;
+ 
+ }
+ .center-layout__item{
+ font-size: 42px;
+ font-weight:700;
+ margin: auto;
+ }
+ 
+ .chart-layout{
+     margin: 36px auto 0 auto;
+     padding:32px 0;
+     height: 320px;
+     background-color: white;
+     display: flex;
+     justify-content: space-around;
+     align-items: flex-end; /*reverse lai huong cross start and cross end*/
+ 
+ }
+ .chart-layout__item{
+     width: 60px;
+     color: white;
+     text-align: center;
+     height: var(--percent);
+     background-color: orange;
+     animation: growth ease-in 1s;
+ }
+ @keyframes growth{
+     from{
+         height: 0;
+         opacity: 10%;
+     }to {
+         opacity: 1;
+         height: var(--percent);
+     }
+ }
+ 
+ .the-end{
+     margin: 12px auto 48px auto;
+     padding: 32px 0; 
+     max-width: 740px;
+     min-height: 360px;
+     display: flex;
+     flex-direction: row;
+ }
+ .the-end__first{
+     flex: 1;
+     padding: 4px 16px;
+     background-color: white;
+ }
+ .the-end__second{
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+ }
+ .the-end__second-one{
+     padding:4px 16px;
+     background-color: azure;
+     flex: 1;
+ }
+ .the-end__second-two{
+     padding:4px 16px;
+     background-color:aqua;
+     flex:1;
+ }
+ 
+ /*BUTTON*/
+ * {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+ }
+ body {
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     font-family: "Helvetica Neue";
+     background-color: #f4f4f5;
+ }  
+ body >div{
+     margin: auto;
+ }
+ .btn{
+     display: inline-block;
+     text-decoration: none;
+     background-color: transparent;
+     border: none;
+     outline: none;
+     padding: 12px 48px;
+     border-radius: 50px;
+     cursor: pointer; /*di chuot vao thi thanh hinh ban tay*/
+     min-width: 120px;
+     transition: opacity 0.1s linear;
+ }
+ .btn:hover{
+     opacity: 0.8;
+ }
+ .btn + .btn { /*hai element dung canh nhau thi se bi tac dong*/
+     margin-left: 16px;
+ }
+ .btn--success{
+     background-color: green;
+     color: white;
+     font-weight: 30px;
+ }
+ .btn--warn{
+     background-color: orange;
+ }
+ .btn--danger{
+     background-color: red;
+     margin: auto;
+ }
+ .btn--info{
+     background-color: aquamarine;
+ }
+ .btn--disable{ 
+     opacity: 0.5 !important;
+     cursor: default;
+ }
+ .btn--size-s{
+     padding: 12px 20px;
+ }   
+ .btn--size-l{
+     padding: 30px 50px;
+ }
+ #toast {
+     position: fixed;
+     top: 32px;
+     right: 32px;
+     z-index: 999999;
+ }
+ .toast{
+     display: flex;
+     align-items: center; /*can chinh item ve center cua vat chua*/
+     background-color: white;
+     border-radius: 2px;
+     padding: 20px 0;/* padding: tren-duoi trai-phai*/
+     border-left: 4px solid;
+     border-right: 0px;
+     border-top: 0;
+     border-bottom: 0;
+     min-width: 400px;
+     max-width: 450px;
+     box-shadow: 0 5px 8px lightgrey; /*box-shadow: ngang doc blur color*/
+     /* animation: slidetoleft ease-out 0.3s, fadeout linear 1s 3s forwards; so 3 la thoi gian delay */
+     transition: all ease-out 0.8s;
+ }
+ 
+ @keyframes slidetoleft {
+     from{
+         opacity: 0;
+         transform: translateX(calc(100% + 32px));
+     }
+     to{
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+ @keyframes fadeout{
+     to{
+         opacity: 0;
+     }
+ }
+ .toast+.toast{
+     margin-top: 20px;
+ }
+ .toast__icon {
+     padding: 0 16px;
+     font-size: 20px;
+ }
+ .toat__body{
+     flex-grow: 1;
+ }
+ .toast__title{
+     font-size: 16px;
+     font-weight: 20px;
+     
+ }
+ .toast__msg{
+      font-size: 12px;
+      margin-top: 4px;
+     
+ }
+ .toast__close{
+     font-size: 20px;
+     padding: 0 16px;
+     color: rgba(0,0,0,0.3);
+     color: rgb(0, 0, 0);
+     cursor: pointer;
+ }
+ .toast__close:hover{
+     opacity: 0.6;
+ }
+ .toast--success{
+     border-color: blue;
+ }
+ .toast--success .toast__icon {
+     color: blue;
+ }
+ .toast--info{
+     border-color: yellow;
+ }
+ .toast--info .toast__icon {
+     color: yellowgreen;
+ }
+ .toast--warning{
+     border-color: red;
+ }
+ .toast--warning .toast__icon {
+    color: red;
+ }
+ .toast--error{
+     border-color: grey;
+ }
+ .toast--error .toast__icon {
+    color: grey;
+ }
+ 
+ 
