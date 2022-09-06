@@ -56,9 +56,9 @@
                         </li>
                         <li class="header__navbar-item">
                            <span class="nopointer">Connect us</span> 
+                               <a href="" class="header__navbar-item-icon"><i class="fa-brands fa-facebook"></i></a>
+                               <a href="" class="header__navbar-item-icon"><i class="fa-brands fa-square-instagram"></i></a>
                         </li>
-                            <a href="" class="header__navbar-item-icon"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="" class="header__navbar-item-icon"><i class="fa-brands fa-square-instagram"></i></a>
                     </ul>
                     <ul class="header__navbar-list">
 
@@ -120,8 +120,25 @@
                             <a href="" class="header__navbar-item-icon"><i class="fa-solid fa-circle-question"></i></i></a>
                             <a href="" class="header__navbar-item-link">Help</a>
                         </li>
-                        <li class="header__navbar-item header__navbar-item-strong header__navbar-item-link header__navbar-item-separate">Register</li>
-                        <li class="header__navbar-item header__navbar-item-strong header__navbar-item-link">Sign in</li>
+                        <!-- <li class="header__navbar-item header__navbar-item-strong header__navbar-item-link header__navbar-item-separate">Register</li>
+                        <li class="header__navbar-item header__navbar-item-strong header__navbar-item-link">Sign in</li> -->
+                        <li class="header__navbar-item header__navbar-user">
+                            <img src="https://th.bing.com/th/id/OIP.2bJ9_f9aKoGCME7ZIff-ZwHaJ4?pid=ImgDet&w=1704&h=2272&rs=1" alt="" class="header__navbar-user-img">
+                            <span class="header__navbar-user-name">Quốc Phong</span>
+                            <ul class="header__navbar-user-menu">
+                                <li class="header__navbar-user-menu-item">
+                                <a href="">Tài khoản của tui</a>
+                                <li class="header__navbar-user-menu-item">
+                                  <a href="">Địa chỉ của tui</a>
+                                </li>
+                                <li class="header__navbar-user-menu-item">
+                                <a href="">Đơn mua hàng</a>
+                                </li>
+                                <li class="header__navbar-user-menu-item">
+                                <a href="">Đăng suất</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <div class="header-with-search">
@@ -240,8 +257,62 @@
                 </div>
             </div>
         </header>
-        <div class="container">
-            
+        <div class="app__container">
+            <div class="grid">
+                <div class="grid__row app__contain">
+                    <div class="grid__collumn-2">
+                        <nav class="category">
+                            <h3 class="category__heading">  
+                                    <i class="category__heading-icon fa-solid fa-list"></i>
+                                Danh mục
+                            </h3>
+                            <ul class="category-list ">
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link category-item-active ">Sản phẩm</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Mô hình</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Mỹ phẩm</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Mỹ phẩm</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Quần áo</a>
+                                </li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="grid__collumn-10">
+                        <div class="home-filter">
+                            <span class="home-filter-label">Sắp xếp theo</span>
+                            <button class="btn">Phổ biến</button>
+                            <button class="btn btn-primary">Mới nhất</button>
+                            <button class="btn">Bán chạy</button>
+                            <span class="select-input">
+                                <span class="label">Giá</span>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </span>
+
+                            <div class="home-filter__paginate">
+                                <span class="home-filter__paginate-num">
+                                    <span class="home-filter__paginate-num-current">1</span>/14
+                                    <div class="home-filter__paginate-control">
+                                        <a href="#" class="home-filter__paginate-btn">
+                                            <i class="fa-solid fa-angle-right"></i>
+                                            <i class="fa-solid fa-angle-left"></i>
+
+                                        </a>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <footer class="footer">
 
