@@ -1,5 +1,4 @@
-#include <iostream>
-#include <string.h>
+#include<bits/stdc++.h>
 #include<stack> // stack from standard template library
 using namespace std;
 /*HUONG DAN SU DUNG GITHUB CUA TUI
@@ -156,20 +155,57 @@ void ReverseO1(char*c, int n){
 push
 top them and set as head
 pop()v */
+struct TreeNode {
+      int val;
+      TreeNode *left;
+      TreeNode *right;
+     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+  };
+TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+       if(!root) return NULL;
+       if ( root->val > p->val && root->val > q->val)
+            return lowestCommonAncestor(root->left,p,q);
+       if ( root->val < p->val && root->val < q->val)
+            return lowestCommonAncestor(root->right,p,q);
+        return root;
+}
 
+ int findwinner(int n, int k ,int subn, int loser, int* a){
+        // find the winner
+        if (n == 1){
+            for(int i = 1; i <= subn;i++){
+               if (a[i]) return i;
+            }
+        }
+        // find the loser
+        loser += k - 1;
+        // neu ma het 1 vong tron
+        if (loser > subn){
+           loser -= subn;
+        }
+        // check tai do
+        while(a[loser] == 0)
+            loser++;
+        a[loser] = 0;
+        //check dang truoc
+        while(a[loser+1] == 0)
+            loser++;
+        
+        return findwinner(--n,k,subn,loser + 1,a);
+        
+    }
+    int findTheWinner(int n, int k) {
+        int subn = n,loser = 1;
+        int a[n + 1];
+        for (int i = 0; i < n;i++){
+            a[i] = 1;
+        }
+        
+        return findwinner(n,k, subn, loser,a);
+    }
 int main()
 {
-    Node*head= NULL;
-    inserthead(head,1);
-    inserthead(head,2);
-    inserthead(head,3);
-    inserthead(head,4);
-    inserthead(head,5);
-    inserthead(head,6);
-    printxuoi(head);
-    reverseuselinkedlist(head);
-    printxuoi(head);
-
-    
+    cout << findTheWinner(6,5);   
+system("pause");
     return 0;
 }
