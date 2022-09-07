@@ -1,3 +1,4 @@
+#include<bits/stdc++.h>
 #include <iostream>
 #include <string.h>
 #include <ctime>
@@ -164,9 +165,58 @@ void ReverseO1(char *c, int n)
 push
 top them and set as head
 pop()v */
+struct TreeNode {
+      int val;
+      TreeNode *left;
+      TreeNode *right;
+     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+  };
+TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+       if(!root) return NULL;
+       if ( root->val > p->val && root->val > q->val)
+            return lowestCommonAncestor(root->left,p,q);
+       if ( root->val < p->val && root->val < q->val)
+            return lowestCommonAncestor(root->right,p,q);
+        return root;
+}
 
+ int findwinner(int n, int k ,int subn, int loser, int* a){
+        // find the winner
+        if (n == 1){
+            for(int i = 1; i <= subn;i++){
+               if (a[i]) return i;
+            }
+        }
+        // find the loser
+        loser += k - 1;
+        // neu ma het 1 vong tron
+        if (loser > subn){
+           loser -= subn;
+        }
+        // check tai do
+        while(a[loser] == 0)
+            loser++;
+        a[loser] = 0;
+        //check dang truoc
+        while(a[loser+1] == 0)
+            loser++;
+        
+        return findwinner(--n,k,subn,loser + 1,a);
+        
+    }
+    int findTheWinner(int n, int k) {
+        int subn = n,loser = 1;
+        int a[n + 1];
+        for (int i = 0; i < n;i++){
+            a[i] = 1;
+        }
+        
+        return findwinner(n,k, subn, loser,a);
+    }
 int main()
 {
+    cout << findTheWinner(6,5);   
+system("pause");
     ios_base::sync_with_stdio(0); // doc input nhanh hon
     cin.tie(0);                   // doc het input xong in ra 1 lan
     cout.tie();
