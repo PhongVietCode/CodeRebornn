@@ -1,4 +1,7 @@
 #include<bits/stdc++.h>
+#include <iostream>
+#include <string.h>
+#include<ctime>
 #include<stack> // stack from standard template library
 using namespace std;
 /*HUONG DAN SU DUNG GITHUB CUA TUI
@@ -205,7 +208,15 @@ TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
     }
 int main()
 {
+<<<<<<< HEAD
     cout << findTheWinner(6,5);   
 system("pause");
+=======
+    ios_base::sync_with_stdio(0); // doc input nhanh hon
+    cin.tie(0); //doc het input xong in ra 1 lan
+    cout.tie();
+    
+
+>>>>>>> ff07fe89b2ca4a7f5224d113f773e2e6e625c87c
     return 0;
 }
