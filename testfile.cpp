@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string.h>
-#include<ctime>
-#include<stack> // stack from standard template library
+#include <ctime>
+#include <stack> // stack from standard template library
 using namespace std;
 /*HUONG DAN SU DUNG GITHUB CUA TUI
 1. SAVE CHANGE TU MAY LEN GIT HUB
@@ -91,15 +91,19 @@ void deleteindex(Node *&head, int index)
     }
     cout << "your index is invalid";
 }
-void RecursionPrint(Node* p){
-    if (p == NULL) return; // stop condition
-    cout << p->data<<" ";  
-    RecursionPrint(p->next); // recurtion 
+void RecursionPrint(Node *p)
+{
+    if (p == NULL)
+        return; // stop condition
+    cout << p->data << " ";
+    RecursionPrint(p->next); // recurtion
 }
-void RecursionReverPrint(Node*p){
-    if (p == NULL) return; // stop condition
-    RecursionReverPrint(p->next); // recurtion 
-    cout << p->data<<" ";  
+void RecursionReverPrint(Node *p)
+{
+    if (p == NULL)
+        return;                   // stop condition
+    RecursionReverPrint(p->next); // recurtion
+    cout << p->data << " ";
 }
 void printxuoi(Node *head)
 {
@@ -141,10 +145,13 @@ void Reverse(Node *&head)
     head = prev;
     return;
 }
-void ReverseO1(char*c, int n){
-    int j = n-1;
-    for (int i =0;i < n/2;i++){
-        if (i<j){
+void ReverseO1(char *c, int n)
+{
+    int j = n - 1;
+    for (int i = 0; i < n / 2; i++)
+    {
+        if (i < j)
+        {
             char temp = c[i];
             c[i] = c[j];
             c[j] = temp;
@@ -161,9 +168,11 @@ pop()v */
 int main()
 {
     ios_base::sync_with_stdio(0); // doc input nhanh hon
-    cin.tie(0); //doc het input xong in ra 1 lan
+    cin.tie(0);                   // doc het input xong in ra 1 lan
     cout.tie();
-    
-
+    cout << "Phong dep trai";
+    int n;
+    cin >> n;
+    cout << n;
     return 0;
 }
