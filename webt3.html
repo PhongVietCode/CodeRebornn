@@ -115,7 +115,7 @@
                                </footer>
                             </div>
                             
-                        </li>
+                        </li> 
                         <li class="header__navbar-item"> 
                             <a href="" class="header__navbar-item-icon"><i class="fa-solid fa-circle-question"></i></i></a>
                             <a href="" class="header__navbar-item-link">Help</a>
@@ -289,27 +289,80 @@
                     <div class="grid__collumn-10">
                         <div class="home-filter">
                             <span class="home-filter-label">Sắp xếp theo</span>
-                            <button class="btn">Phổ biến</button>
-                            <button class="btn btn-primary">Mới nhất</button>
-                            <button class="btn">Bán chạy</button>
-                            <span class="select-input">
+                            <button class="home-filter-btn btn">Phổ biến</button>
+                            <button class="home-filter-btn btn btn-primary">Mới nhất</button>
+                            <button class="home-filter-btn btn">Bán chạy</button>
+                            
+                            <div class="select-input">
                                 <span class="label">Giá</span>
                                 <i class="fa-solid fa-angle-down"></i>
-                            </span>
+                                <ul class="select-input-list">
+                                    <li class="select-input-item">
+                                        <a href="#" class="select-input-item-link">Giá: thấp đến cao</a>
+                                    </li>
+                                    <li class="select-input-item">
+                                        <a href="#" class="select-input-item-link">Giá: cao đến thấp</a>
+                                    </li>
+                                </ul>
+                            </div>
 
                             <div class="home-filter__paginate">
                                 <span class="home-filter__paginate-num">
-                                    <span class="home-filter__paginate-num-current">1</span>/14
-                                    <div class="home-filter__paginate-control">
-                                        <a href="#" class="home-filter__paginate-btn">
-                                            <i class="fa-solid fa-angle-right"></i>
-                                            <i class="fa-solid fa-angle-left"></i>
-
+                                    <span class="home-filter__paginate-num-current">1/14</span>
+                                    <span class="home-filter__paginate-control">
+                                        <a href="#" class="home-filter__paginate-btn home-filter__paginate-btn-disable">
+                                            <i class="home-filter__paginate-icon fa-solid fa-angle-left"></i>
                                         </a>
-                                    </div>
+                                        <a href="#" class="home-filter__paginate-btn">
+                                            <i class="home-filter__paginate-icon  fa-solid fa-angle-right"></i>
+                                        </a>
+                                    </span>
                                 </span>
                             </div>
                         </div>
+                        
+                        <!-- Product --> 
+                        <div class="home-product">
+                                <div class="grid-row">
+                                    <!-- GRID ROW COLUMN -->
+                                <div class="grid__collumn-2-4">
+                                    <div class="home-product-item">
+                                        <div class="home-product-item-img" style="background-image: url(https://th.bing.com/th/id/R.c115d2afee80853ca3dc7aebcfb34121?rik=wOSuMX4G835AvA&pid=ImgRaw&r=0);"></div>
+                                        <h5 class="home-product-item-name">Mô hình Songoku xách tay nhật bản cao 30cm full box chi tiết, giảm cực mạnh</h5>
+                                        <div class="home-product-item-price">
+                                            <span class="home-product-item-price-old">1.500.000đ</span>
+                                            <span class="home-product-item-price-current">799.000đ</span>
+                                        </div>
+                                        <div class="home-product-item-action">
+                                            <span class="home-product-item-action-icon">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <!-- <i class="fa-duotone fa-heart"></i> -->
+                                            </span>
+                                            <div class="home-product-item-rating">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="home-product-item-origin">
+                                            <span class="home-product-item-brand">Tokyo</span>
+                                            <span class="home-product-item-name">Nhật Bản</span>
+                                        </div>
+                                        <div class="home-product-item-favorite">
+                                            <i class="fa-solid fa-square-heart"></i>
+                                            Yêu thích
+                                        </div>
+                                        <div class="home-product-item-discount">
+                                            <i class="home-product-item-discount-icon fa-solid fa-tags"></i>
+                                            <span class="home-product-item-discount-label">Giảm giá 10%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>  
                     </div>
                 </div>
             </div>
