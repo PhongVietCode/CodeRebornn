@@ -216,7 +216,7 @@ TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
 int main()
 {
     cout << findTheWinner(6,5);   
-system("pause");
+    system("pause");
     ios_base::sync_with_stdio(0); // doc input nhanh hon
     cin.tie(0);                   // doc het input xong in ra 1 lan
     cout.tie();
