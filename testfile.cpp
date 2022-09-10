@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 #include <iostream>
 #include <string.h>
-#include<ctime>
-#include<stack> // stack from standard template library
+#include <ctime>
+#include <stack> // stack from standard template library
 using namespace std;
 /*HUONG DAN SU DUNG GITHUB CUA TUI
 1. SAVE CHANGE TU MAY LEN GIT HUB
@@ -92,15 +92,19 @@ void deleteindex(Node *&head, int index)
     }
     cout << "your index is invalid";
 }
-void RecursionPrint(Node* p){
-    if (p == NULL) return; // stop condition
-    cout << p->data<<" ";  
-    RecursionPrint(p->next); // recurtion 
+void RecursionPrint(Node *p)
+{
+    if (p == NULL)
+        return; // stop condition
+    cout << p->data << " ";
+    RecursionPrint(p->next); // recurtion
 }
-void RecursionReverPrint(Node*p){
-    if (p == NULL) return; // stop condition
-    RecursionReverPrint(p->next); // recurtion 
-    cout << p->data<<" ";  
+void RecursionReverPrint(Node *p)
+{
+    if (p == NULL)
+        return;                   // stop condition
+    RecursionReverPrint(p->next); // recurtion
+    cout << p->data << " ";
 }
 void printxuoi(Node *head)
 {
@@ -142,10 +146,13 @@ void Reverse(Node *&head)
     head = prev;
     return;
 }
-void ReverseO1(char*c, int n){
-    int j = n-1;
-    for (int i =0;i < n/2;i++){
-        if (i<j){
+void ReverseO1(char *c, int n)
+{
+    int j = n - 1;
+    for (int i = 0; i < n / 2; i++)
+    {
+        if (i < j)
+        {
             char temp = c[i];
             c[i] = c[j];
             c[j] = temp;
@@ -173,50 +180,50 @@ TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         return root;
 }
 
- int findwinner(int n, int k ,int subn, int loser, int* a){
-        // find the winner
-        if (n == 1){
-            for(int i = 1; i <= subn;i++){
-               if (a[i]) return i;
-            }
-        }
-        // find the loser
-        loser += k - 1;
-        // neu ma het 1 vong tron
-        if (loser > subn){
-           loser -= subn;
-        }
-        // check tai do
-        while(a[loser] == 0)
-            loser++;
-        a[loser] = 0;
-        //check dang truoc
-        while(a[loser+1] == 0)
-            loser++;
+//  int findwinner(int n, int k ,int subn, int loser, int* a){
+//         // find the winner
+//         if (n == 1){
+//             for(int i = 1; i <= subn;i++){
+//                if (a[i]) return i;
+//             }
+//         }
+//         // find the loser
+//         loser += k - 1;
+//         // neu ma het 1 vong tron
+//         if (loser > subn){
+//            loser -= subn;
+//         }
+//         // check tai do
+//         while(a[loser] == 0)
+//             loser++;
+//         a[loser] = 0;
+//         //check dang truoc
+//         while(a[loser+1] == 0)
+//             loser++;
         
-        return findwinner(--n,k,subn,loser + 1,a);
+//         return findwinner(--n,k,subn,loser + 1,a);
         
-    }
-    int findTheWinner(int n, int k) {
-        int subn = n,loser = 1;
-        int a[n + 1];
-        for (int i = 0; i < n;i++){
-            a[i] = 1;
-        }
+//     }
+//     int findTheWinner(int n, int k) {
+//         int subn = n,loser = 1;
+//         int a[n + 1];
+//         for (int i = 0; i < n;i++){
+//             a[i] = 1;
+//         }
         
-        return findwinner(n,k, subn, loser,a);
-    }
+//         return findwinner(n,k, subn, loser,a);
+//     }
+
 int main()
 {
-<<<<<<< HEAD
     cout << findTheWinner(6,5);   
-system("pause");
-=======
+    system("pause");
     ios_base::sync_with_stdio(0); // doc input nhanh hon
-    cin.tie(0); //doc het input xong in ra 1 lan
+    cin.tie(0);                   // doc het input xong in ra 1 lan
     cout.tie();
-    
-
->>>>>>> ff07fe89b2ca4a7f5224d113f773e2e6e625c87c
+    cout << "Phong dep trai";
+    int n;
+    cin >> n;
+    cout << n;
     return 0;
 }

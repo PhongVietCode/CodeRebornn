@@ -407,15 +407,15 @@ void n_print(){
 
 int main()
 {
-    // char s[] = "(2*5) - (2+5)*3 - 7 + 9*(7+9)"; // check :(2*5) - (2+5)*3 - 7 + 9*(7+9)
-    // char s2[strlen(s)];
-    // cout <<"Infix: ";
-    // for(int i = 0;  i < strlen(s); i++){
-    //     if (s[i] != ' '){
-    //         cout << s[i];
-    //     }
-    // }
-    // cout << endl<< "Postfix: "<< infixtopostfix(s, strlen(s))<<endl;
+    char s[] = "(2*5) - (2+5)*3 - 7 + 9*(7+9)"; // check :(2*5) - (2+5)*3 - 7 + 9*(7+9)
+    char s2[strlen(s)];
+    cout <<"Infix: ";
+    for(int i = 0;  i < strlen(s); i++){
+        if (s[i] != ' '){
+            cout << s[i];
+        }
+    }
+    cout << endl<< "Postfix: "<< infixtopostfix(s, strlen(s))<<endl;
     // strcpy(s2,infixtopostfix(s, strlen(s)).c_str());
     // cout <<"The answer is: "<< postfix(s2);
     
