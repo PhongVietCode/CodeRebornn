@@ -149,6 +149,7 @@
     top: 100%;
     padding: 8px;
     border-radius: 2px;
+    z-index: 1;
     display: none;
     animation: fadein ease-in 0.2s;
 }
@@ -426,7 +427,8 @@
     text-align: center;
 }
 .header__logo-img{
-    width: 100px;
+    width: 50%;
+    height: 50%;
 }
 .header__search{
     flex: 1;
@@ -770,7 +772,7 @@
     display: block; /*thẻ a phải có cái này thì padding với margin mới có tác dụng*/
     font-size: 1.6rem;
     text-decoration: none;
-    color: #666;
+    color: black;
     padding: 4px 16px;
     right: 0;
     transition: right linear 0.2s;
@@ -780,7 +782,7 @@
     right: -4px;
 }
 
-.category-item-active.category-item__link{
+.category-item-active{
     color: var(--primary-color);
     position: relative;
 }
@@ -814,7 +816,9 @@
 .home-filter-btn{
     margin-right: 12px;
     min-width: 90px !important;
-    
+}
+.home-filter-btn-white-bg{
+    background-color: white !important;
 }
 .home-filter__paginate-num{
     font-size: 1.5rem;
@@ -901,7 +905,7 @@
     padding: 2px 0;
 }
 .select-input-item-link:hover{
-    color: var(--primary-color);
+    color: orange;
 }
 .label{
     font-size: 1.4rem;
@@ -909,6 +913,7 @@
 .home-product-item{
     margin-top: 10px;
     background-color: white;
+    position: relative;
 }
 .home-product-item-img{
     padding-top: 100%;
@@ -931,40 +936,125 @@
 }
 .home-product-item-price{
     font-size: 1.5rem;
+    display: flex;
+    margin: 0 10px;
+    display: flex;
+    align-items: baseline; /*quy ve cung 1 dong*/
+    flex-wrap: wrap; /*trong truong hop gia cao qua*/
 }
 .home-product-item-price-old{
-    
+    font-size: 1.3rem;
+    color: #666;
+    text-decoration: line-through;
+    margin-right: 5px;
 }
 .home-product-item-price-current{
-    
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-weight: 500;
 }
 .home-product-item-action{
-    
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px;
 }
 .home-product-item-action-icon{
-    
+    font-size: 1.3rem;
+    color: red;
+}
+.home-product-item-action-icon-liked{
+    display: none;
+}
+.home-product-item-action-icon--liked .home-product-item-action-icon-liked{
+    display: block;
+}
+.home-product-item-action-icon--liked .home-product-item-action-icon-unnlike{
+    display: none;
 }
 .home-product-item-rating{
-    
+    color: #d5d5d5;
+    margin:-0.3px 0 0 auto;
+}
+.home-product-item-rating-sold{
+    margin-left: 3px;
+    color: #555555;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.home-product-item-rating-rated{
+    color: yellow;
+    /* co the dung ham transform de ma phong to thu nho hinh 
+    va transform origin dung de xac dinh goc cua viec transform la vao dau */
 }
 .home-product-item-origin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: 5px 10px;
     
 }
-.home-product-item-brand{
-    
+.home-product-item-favorite{ 
+    position: absolute;
+    top : 10px;
+    left: -4px;
+    background-color: currentColor;
+    color:var(--primary-color);
+    border-top-right-radius:2px ;
+    border-bottom-right-radius:2px ;
+    min-width: 40px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    padding-right: 4px;
+    box-shadow:1px 1px 5px #757575 ;
 }
-.home-product-item-name{
-    
+.home-product-item-favorite i{
+    color: var(--white-color);
 }
-.home-product-item-favorite{
-    
+.home-product-item-favorite span{
+    color: var(--white-color);
+}
+.home-product-item-favorite::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    border-top: 4px solid currentColor;
+    border-left: 4px solid transparent;
+    filter: brightness(0.7);
 }
 .home-product-item-discount{
-    
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 40px;
+    height: 36px;
+    color: rgba(255,216,64,0.93);
+    background-color:currentColor;
+    text-align: center;
 }
-.home-product-item-discount-icon{
-    
+.home-product-item-discount::after{
+    content: "";
+    display: block;
+    border-style: solid;
+    border-width: 0 20px 4px 20px; /*cho border top = 0 thi se co duoc 1 nua hinh*/
+    top: 100%;
+    border-color: transparent currentColor transparent currentColor;
+    position: absolute;
+
 }
+.home-product-item-discount-num{
+    font-size: 1.3rem;
+    font-weight:bolder;
+    color: var(--primary-color);
+    line-height: 1.3rem;
+}
+
 .home-product-item-discount-label{
-    
-}
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.4rem;
+
+}   
